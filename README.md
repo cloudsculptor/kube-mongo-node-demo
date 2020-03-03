@@ -6,7 +6,7 @@ This example was tested on clean install of `Ubuntu 18.04`.
 
 ## Quick start
 
-1. Install a local Kubernetes cluster and Docker repository. Instructions here: [Kubernetes Infrastructure](#kubernetes-infrastructure).
+1. Install a local Kubernetes cluster and Docker repository by following [these](#kubernetes-infrastructure) instructions.
 2. Run the `build.sh` script in this directory to install all the services in Kubernetes.
 
 ## Kubernetes Infrastructure
