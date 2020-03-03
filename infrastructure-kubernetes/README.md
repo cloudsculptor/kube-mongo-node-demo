@@ -8,8 +8,8 @@ are provided to assist in setting up a local cluster that is certain to be compa
 * Ubuntu 18.04 (`lsb_release -a`)
 * Docker CE version 19.03.6 (`docker -v`)
 * MicroK8s providing:
-** Kubernetes Client v1.17.3 (`kubectl version`)
-** Kubernetes Server v1.17.2 (`kubectl version`)
+* Kubernetes Client v1.17.3 (`kubectl version`)
+* Kubernetes Server v1.17.2 (`kubectl version`)
 
 ## Setting up environment
 
