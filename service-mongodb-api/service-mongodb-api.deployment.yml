@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-mongodb-api
+  labels:
+    app: service-mongodb-api
+    tier: backend
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: service-mongodb-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-mongodb-api
+    spec:
+      containers:
+      - name: service-mongodb-api
+        image: localhost:32000/service-mongodb-api
+        ports:
+        - containerPort: 8080
+  

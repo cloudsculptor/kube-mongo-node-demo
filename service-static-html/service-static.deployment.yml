@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-static-html
+  labels:
+    app: service-static-html
+    tier: backend
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: service-static-html
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-static-html
+    spec:
+      containers:
+      - name: service-static-html
+        image: localhost:32000/service-static-html
+        ports:
+        - containerPort: 80
