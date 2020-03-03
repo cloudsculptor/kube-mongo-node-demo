@@ -21,7 +21,7 @@ Starting from a machine with a fresh copy of Ubuntu 18.04:
 2. Enable the following addons: `dns`, `storage`, `registry`, `helm`, `ingress`, `dashboard`.
 3. Check status of addons `microk8s.status --wait-ready`.
 
-#### Commands for the impatient
+#### MicroK8s install commands for the impatient
 
 ```
 sudo snap install microk8s --classic --channel=1.17/stable
@@ -43,7 +43,7 @@ microk8s.status --wait-ready
 1. Follow instructions here: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 2. Ensure you setup a non root user who can run Docker.
 
-#### Commands for the impatient
+#### Docker CE install commands for the impatient
     
 ```
 sudo apt update
