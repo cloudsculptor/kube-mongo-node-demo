@@ -8,6 +8,8 @@ This example was tested on clean install of `Ubuntu 18.04`.
 
 1. Install a local Kubernetes cluster and Docker repository by following [these](#kubernetes-infrastructure) instructions.
 2. Run the `build.sh` script in this directory to install all the services in Kubernetes.
+3. You can monitor the progress of the roll out with `kubectl rollout status` or the [Kubernetes Dashboard](https://microk8s.io/docs/addon-dashboard) if you elected to install it.
+4. Once a successful roll out is complete you can view the results at http://127.0.0.1
 
 ## Kubernetes Infrastructure
 
