@@ -15,17 +15,16 @@ are provided to assist in setting up a local cluster that is certain to be compa
 
 Starting from a machine with a fresh copy of Ubuntu 18.04:
 
-### MicroK8s
+### Install and configure MicroK8s
 
 1. Install `MicroK8s` following these instructions: https://microk8s.io/docs/
 2. Enable the following addons: `dns, storage, registry, helm, ingress, dashboard`.
 3. Check status of addons `microk8s.status --wait-ready`.
 
-### Docker CE
+### Install Docker CE
 
-See: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
-
-
+1. Follow instructions here: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+2. Ensure you setup a non root user who can run Docker.
 
 ```
 microk8s.enable dns
