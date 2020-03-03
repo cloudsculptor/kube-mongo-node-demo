@@ -8,11 +8,11 @@ spec:
   rules:
   - http:
       paths:
-        - path: /node
+        - path: /
           backend:
-            serviceName: node-app
-            servicePort: 8080
-        - path: /static
-          backend:
-            serviceName: static-app
+            serviceName: service-static-html
             servicePort: 80
+        - path: /data
+          backend:
+            serviceName: service-mongodb-api
+            servicePort: 8080
