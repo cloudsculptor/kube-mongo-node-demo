@@ -12,31 +12,34 @@ set -x
 
 # service-static-html
 
-microk8s.kubectl delete service static-app
-microk8s.kubectl delete -f patient-zero-k8s/static-deployment.yml
+microk8s.kubectl delete service service-static-html
+microk8s.kubectl delete -f service-static-html/service-static.deployment.yml
 
-docker build patient-zero-sample-static -t static-app
-docker tag static-app localhost:32000/static-app
-docker push localhost:32000/static-app
+docker build service-static-html -t service-static-html
+docker tag service-static-html localhost:32000/service-static-html
+docker push localhost:32000/service-static-html
 
-microk8s.kubectl apply -f patient-zero-k8s/static-deployment.yml
-microk8s.kubectl expose deployment static-app --type=LoadBalancer --port=80
+microk8s.kubectl apply -f service-static-html/service-static.deployment.yml
+microk8s.kubectl expose deployment service-static-html --type=LoadBalancer --port=80
 
 # service-mongodb-api
 
-microk8s.kubectl delete service node-app
-microk8s.kubectl delete -f patient-zero-k8s/node-deployment.yml
+microk8s.kubectl delete service service-mongodb-api
+microk8s.kubectl delete -f service-mongodb-api/service-mongodb-api.deployment.yml
 
-docker build patient-zero-sample-node -t node-app
-docker tag node-app localhost:32000/node-app
-docker push localhost:32000/node-app
+docker build service-mongodb-api -t service-mongodb-api
+docker tag service-mongodb-api localhost:32000/service-mongodb-api
+docker push localhost:32000/service-mongodb-api
 
-microk8s.kubectl apply -f patient-zero-k8s/node-deployment.yml
+microk8s.kubectl apply -f service-mongodb-api/service-mongodb-api.deployment.yml
 microk8s.kubectl expose deployment node-app --type=LoadBalancer --port=8080
 
 # service-mongodb
 
+helm delete service-mongodb
+helm install service-mongodb stable/mongodb -f service-mongodb/values.yaml
+
 # Ingress
 
-microk8s.kubectl delete -f patient-zero-k8s/ingress.yml
-microk8s.kubectl apply -f patient-zero-k8s/ingress.yml
+microk8s.kubectl delete -f service-nginx-ingress/ingress.yml
+microk8s.kubectl apply -f service-nginx-ingress/ingress.yml

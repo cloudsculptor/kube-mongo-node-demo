@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-app
+  labels:
+    app: static-app
+    tier: backend
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: static-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: static-app
+    spec:
+      containers:
+      - name: static-app
+        image: localhost:32000/static-app
+        ports:
+        - containerPort: 80
+        env:
+        - name: APP_NAME
+          value: FOO
+  
