@@ -51,6 +51,21 @@ microk8s.enable dashboard
 microk8s.status --wait-ready
 ```
 
+### Install and run Kubernetes Dashboard
+
+1. Install and proxy dashboard following instructions here: https://microk8s.io/docs/addon-dashboard
+2. Open dashboard here: https://127.0.0.1:10443
+
+#### Install and run Kubernetes Dasboard commands for the impatient
+
+```
+microk8s.enable dashboard
+token=$(microk8s.kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+microk8s.kubectl -n kube-system describe secret $token
+microk8s.kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+# Open: https://127.0.0.1:10443
+```
+
 ### Install Docker CE
 
 1. Follow instructions here: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
