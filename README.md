@@ -4,7 +4,11 @@ This repository contains a very basic demo of the technologies listed in the tit
 
 This example was tested on clean install of `Ubuntu 18.04`.
 
-# Kubernetes Infrastructure
+## Quick start
+
+1. Create a local Kubernetes cluster and Docker repository. Instructions here [here][Kubernetes Infrastructure]
+
+## Kubernetes Infrastructure
 
 You can deploy this example to any compatiable Kubernetes cluster, but the following instructions
 are provided to assist in setting up a local cluster that is certain to be compatible.
